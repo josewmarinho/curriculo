@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Wellington Porto Marinho Junior — Currículo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a1a2e;
+    --accent: #4361ee;
+    --accent-light: #e8ecff;
+    --text: #2d2d3a;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+    --bg-sidebar: #f8f9fc;
+    --bg-white: #ffffff;
+    --tag-bg: #eef2ff;
+    --tag-text: #4338ca;
+    --success: #059669;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    font-size: 9.5pt;
+    line-height: 1.45;
+    background: #f0f0f5;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--bg-white);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* === SIDEBAR === */
+  .sidebar {
+    background: var(--primary);
+    color: #e2e8f0;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sidebar h2 {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebar .section { margin-bottom: 2px; }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 8.5pt;
+    color: #cbd5e1;
+    word-break: break-all;
+  }
+
+  .contact-item .icon { font-size: 10pt; flex-shrink: 0; margin-top: 1px; }
+
+  .contact-item a {
+    color: #93c5fd;
+    text-decoration: none;
+  }
+
+  .skill-category { margin-bottom: 10px; }
+
+  .skill-category h3 {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #93c5fd;
+    margin-bottom: 4px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.08);
+    color: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 7.5pt;
+    font-weight: 400;
+  }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 8.5pt;
+  }
+
+  .lang-level {
+    font-size: 7.5pt;
+    background: rgba(255,255,255,0.1);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: #93c5fd;
+  }
+
+  .edu-item { margin-bottom: 8px; }
+  .edu-item .degree { font-weight: 600; font-size: 8.5pt; color: #e2e8f0; }
+  .edu-item .school { font-size: 8pt; color: #94a3b8; }
+  .edu-item .period { font-size: 7.5pt; color: #64748b; }
+
+  /* === IDE SECTION (sidebar) === */
+  .ide-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ide-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 8pt;
+    color: #cbd5e1;
+  }
+
+  .ide-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #93c5fd;
+    flex-shrink: 0;
+  }
+
+  /* === MAIN CONTENT === */
+  .main {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 18pt;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .header .subtitle {
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 3px;
+  }
+
+  .summary {
+    font-size: 9.5pt;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+  }
+
+  .main-section h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 10px;
+  }
+
+  /* Experience */
+  .exp-item { margin-bottom: 12px; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .exp-role {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .exp-period {
+    font-size: 8pt;
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-size: 9pt;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-bullets li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 3px;
+    font-size: 8.5pt;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .exp-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .exp-tech .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 7pt;
+    font-weight: 500;
+  }
+
+  /* Projects */
+  .project-item {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: var(--bg-sidebar);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .project-name {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .project-type {
+    font-size: 7.5pt;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .project-desc {
+    font-size: 8.5pt;
+    color: var(--text-secondary);
+    margin: 3px 0;
+  }
+
+  /* AI Section */
+  .ai-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .ai-card {
+    padding: 7px 10px;
+    background: var(--bg-sidebar);
+    border-radius: 5px;
+    border-left: 2px solid var(--accent);
+  }
+
+  .ai-card h4 {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2px;
+  }
+
+  .ai-card p {
+    font-size: 7.5pt;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  /* Design & Prototipação */
+  .design-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .design-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: var(--bg-sidebar);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .design-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.12);
+  }
+
+  .design-icon {
+    font-size: 16pt;
+    flex-shrink: 0;
+  }
+
+  .design-card h4 {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1px;
+  }
+
+  .design-card p {
+    font-size: 7.5pt;
+    color: var(--text-secondary);
+  }
+
+  .design-arrow {
+    margin-left: auto;
+    color: var(--accent);
+    font-size: 11pt;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+      min-height: auto;
+    }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside class="sidebar">
+    <div class="section">
+      <h2>Contato</h2>
+      <div class="contact-item">
+        <span class="icon">✉</span>
+        <span>josewellingtonjunior<br>@hotmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📱</span>
+        <span>+55 (86) 99833-7893</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📍</span>
+        <span>Teresina, PI — Brasil</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">🔗</span>
+        <a href="https://github.com/josewmarinho" target="_blank">github.com/josewmarinho</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">💼</span>
+        <a href="https://www.linkedin.com/in/josewportomarinhojr/" target="_blank">linkedin.com/in/josewportomarinhojr</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Habilidades</h2>
+
+      <div class="skill-category">
+        <h3>Frontend</h3>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Next.js 15/16</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Expo 55</span>
+          <span class="tag">TailwindCSS</span>
+          <span class="tag">shadcn/ui</span>
+          <span class="tag">Zustand</span>
+          <span class="tag">React Query</span>
+          <span class="tag">RHF + Zod</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Backend</h3>
+        <div class="tags">
+          <span class="tag">NestJS 11</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Prisma 6</span>
+          <span class="tag">REST API</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">Socket.IO</span>
+          <span class="tag">JWT Auth</span>
+          <span class="tag">RBAC</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>IA & LLMs</h3>
+        <div class="tags">
+          <span class="tag">OpenAI API</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Anthropic</span>
+          <span class="tag">RAG</span>
+          <span class="tag">MCP</span>
+          <span class="tag">AI Agents</span>
+          <span class="tag">Prompt Eng.</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Dados & Infra</h3>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Firestore</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Railway</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">AWS</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Arquitetura</h3>
+        <div class="tags">
+          <span class="tag">DDD</span>
+          <span class="tag">Clean Arch</span>
+          <span class="tag">Ports & Adapters</span>
+          <span class="tag">Multi-tenancy</span>
+          <span class="tag">TDD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>IDEs & Dev Tools com IA</h2>
+      <div class="ide-grid">
+        <div class="ide-item"><span class="ide-dot"></span> VS Code</div>
+        <div class="ide-item"><span class="ide-dot"></span> Cursor (AI IDE)</div>
+        <div class="ide-item"><span class="ide-dot"></span> Antigravity (Gemini)</div>
+        <div class="ide-item"><span class="ide-dot"></span> Stitch (Google MCP)</div>
+        <div class="ide-item"><span class="ide-dot"></span> Flow</div>
+        <div class="ide-item"><span class="ide-dot"></span> Claude Code</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Idiomas</h2>
+      <div class="lang-item">
+        <span>Inglês</span>
+        <span class="lang-level">C1 — Avançado</span>
+      </div>
+      <div class="lang-item">
+        <span>Espanhol</span>
+        <span class="lang-level">B2 — Intermediário</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Formação</h2>
+      <div class="edu-item">
+        <div class="degree">Sistemas de Informação</div>
+        <div class="school">UniFacid</div>
+        <div class="period">2019 — 2023</div>
+      </div>
+      <div class="edu-item">
+        <div class="degree">Direito</div>
+        <div class="school">Estácio</div>
+        <div class="period">2011 — 2016</div>
+      </div>
+      <div class="edu-item">
+        <div class="degree">GoStack (Bootcamp)</div>
+        <div class="school">RocketSeat</div>
+        <div class="period">2019</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="main">
+    <header class="header">
+      <h1>José Wellington<br>Porto Marinho Junior</h1>
+      <div class="subtitle">Engenheiro Full Stack · IA Aplicada · Arquitetura de Software</div>
+    </header>
+
+    <p class="summary">
+      Engenheiro de software full stack com foco em <strong>aplicações inteligentes e integração de LLMs</strong>. 
+      Experiência em arquitetura de sistemas com IA (OpenAI, Gemini, Anthropic), 
+      <strong>RAG, Model Context Protocol (MCP) e Agentes de IA</strong>. 
+      Stack principal: React/Next.js + NestJS + TypeScript. 
+      Histórico de liderança técnica em plataformas de alto tráfego, 
+      criação de SaaS multi-tenant com AI providers plugáveis 
+      e ecossistemas enterprise completos (mobile + web + CMS + API). 
+      Atuação hands-on com DDD, Clean Architecture e pair programming com IA.
+    </p>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="main-section">
+      <h2>Experiência Profissional</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Desenvolvedor Full Stack (Web)</span>
+          <span class="exp-period">02/2025 — 05/2026</span>
+        </div>
+        <div class="exp-company">ULTRA bet — Sorocaba, SP</div>
+        <ul class="exp-bullets">
+          <li>Arquitetura e desenvolvimento front-end Web com Next.js + TypeScript em plataforma de alto tráfego</li>
+          <li>SSR completo com App Router; cache estratégico e lazy-loading para otimização de bundle</li>
+          <li>Criação de design system com tokens, variações e slots para componentização escalável</li>
+          <li>Zustand para estado global (navegação por verticais, preferências, drawer/sidebar)</li>
+          <li>Integração com APIs REST, autenticação e armazenamento (Firestore/Storage)</li>
+          <li>CI/CD (Vercel + GitHub), PR templates, code review, pair e mentoria de pares</li>
+          <li>Testes unitários/integração com Vitest + RTL; foco em qualidade e manutenção</li>
+        </ul>
+        <div class="exp-tech">
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Zustand</span>
+          <span class="tag">Vitest</span><span class="tag">RTL</span><span class="tag">Vercel</span><span class="tag">Firestore</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Desenvolvedor Full Stack</span>
+          <span class="exp-period">11/2021 — 03/2025</span>
+        </div>
+        <div class="exp-company">SoftVision — Campinas, SP</div>
+        <ul class="exp-bullets">
+          <li>Projetos: Mcar e Autopass (mobilidade urbana) e Flowstore (e-commerce)</li>
+          <li>Desenvolvimento Web com React/TypeScript e integrações com APIs REST</li>
+          <li>Firestore (tempo real) e deploys em Vercel; rotinas em AWS</li>
+          <li>Atuação em Scrum/Kanban, code reviews e suporte aos times</li>
+        </ul>
+        <div class="exp-tech">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Firestore</span>
+          <span class="tag">AWS</span><span class="tag">Vercel</span><span class="tag">Scrum</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="main-section">
+      <h2>Projetos</h2>
+
+      <div class="project-item">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span class="project-name">Ezzap — Plataforma WhatsApp SaaS</span>
+          <span class="project-type">Multi-Tenant · AI-Powered</span>
+        </div>
+        <p class="project-desc">
+          SaaS completo para automação de atendimento via WhatsApp com chatbots AI, 
+          inbox real-time, CRM, analytics e integrações externas. Isolamento por tenant.
+        </p>
+        <ul class="exp-bullets">
+          <li>AI provider plugável via Ports & Adapters (OpenAI → Gemini/Anthropic/Ollama)</li>
+          <li>3 modos de AI por conversa: manual, automático e híbrido com escalação inteligente</li>
+          <li>WebSocket real-time (Socket.IO) para inbox e presença de agentes</li>
+          <li>15 módulos NestJS, 11 modelos, 6 Ports, pipeline de actions configurável</li>
+          <li>Integração WhatsApp via Evolution API (QR Code, envio/recebimento)</li>
+        </ul>
+        <div class="exp-tech">
+          <span class="tag">NestJS 11</span><span class="tag">Next.js 16</span><span class="tag">React 19</span>
+          <span class="tag">Prisma 6</span><span class="tag">Socket.IO</span><span class="tag">OpenAI</span>
+          <span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">DDD</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span class="project-name">FPodemos — Plataforma Intranet Enterprise</span>
+          <span class="project-type">Ecossistema 4 Apps</span>
+        </div>
+        <p class="project-desc">
+          Ecossistema digital com App Mobile, CMS, Site Institucional e API REST. 
+          Comunicação interna, eventos, credenciamento por QR e assistente AI.
+        </p>
+        <ul class="exp-bullets">
+          <li>Chat AI com OpenAI: assistente, histórico de conversas e biblioteca de prompts</li>
+          <li>DDD + Clean Architecture: 10 ports, 16 repositories Prisma, RBAC granular</li>
+          <li>Auth multi-plataforma: JWT rotation + Google/Apple OAuth + SMS (Twilio)</li>
+          <li>Push notifications (Expo SDK), VIP management, QR scanner para eventos</li>
+          <li>Deploy: Railway (API) + Vercel (Web) + EAS Build (Stores)</li>
+          <li>Publicado nas stores: <a href="https://play.google.com/store/apps/details?id=com.fpodemos.mobile" target="_blank" style="color:var(--accent);">Google Play</a> · <a href="https://apps.apple.com/br/app/funda%C3%A7%C3%A3o-podemos/id6761346113" target="_blank" style="color:var(--accent);">App Store</a></li>
+        </ul>
+        <div class="exp-tech">
+          <span class="tag">React Native</span><span class="tag">Expo 55</span><span class="tag">Next.js 15</span>
+          <span class="tag">NestJS 11</span><span class="tag">Supabase</span><span class="tag">OpenAI</span>
+          <span class="tag">Railway</span><span class="tag">shadcn/ui</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN & PROTOTIPAÇÃO -->
+    <section class="main-section">
+      <h2>Design & Prototipação</h2>
+      <div class="design-grid">
+        <a href="https://www.figma.com/design/fNApuoVjAuTcksehOaZxHq/IDW?node-id=0-1&t=O5iEI6a0448CRGmu-1" target="_blank" class="design-card">
+          <span class="design-icon">🎨</span>
+          <div>
+            <h4>FPodemos — Ecossistema</h4>
+            <p>App Mobile + CMS + Site Institucional + API</p>
+          </div>
+          <span class="design-arrow">↗</span>
+        </a>
+        <a href="https://www.figma.com/design/fNApuoVjAuTcksehOaZxHq/IDW?node-id=128-54&t=O5iEI6a0448CRGmu-1" target="_blank" class="design-card">
+          <span class="design-icon">💬</span>
+          <div>
+            <h4>Ezzap — Applabb Bot Platform</h4>
+            <p>Dashboard SaaS WhatsApp + Inbox real-time</p>
+          </div>
+          <span class="design-arrow">↗</span>
+        </a>
+        <a href="https://www.figma.com/design/fNApuoVjAuTcksehOaZxHq/IDW?node-id=323-124&t=O5iEI6a0448CRGmu-1" target="_blank" class="design-card">
+          <span class="design-icon">⚡</span>
+          <div>
+            <h4>Fadtech</h4>
+            <p>Interface e fluxos de produto</p>
+          </div>
+          <span class="design-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- IA & LLMs -->
+    <section class="main-section">
+      <h2>Inteligência Artificial & LLMs</h2>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <h4>RAG na Prática</h4>
+          <p>Construção de bases de conhecimento estruturadas para retrieval contextual e geração aumentada com LLMs</p>
+        </div>
+        <div class="ai-card">
+          <h4>Model Context Protocol</h4>
+          <p>Integração com MCP servers (Stitch, ferramentas) para conectar IA a dados e serviços externos</p>
+        </div>
+        <div class="ai-card">
+          <h4>Arquitetura com LLMs</h4>
+          <p>AI providers plugáveis via Port pattern — troca de OpenAI/Gemini/Anthropic sem mudar use-cases</p>
+        </div>
+        <div class="ai-card">
+          <h4>Agentes de IA</h4>
+          <p>Conversação com status machine, AI handling autônomo, escalação para humano e pipeline de actions</p>
+        </div>
+        <div class="ai-card">
+          <h4>IA em Aplicações</h4>
+          <p>Integração de OpenAI API em apps reais: chat, assistentes, prompts curados e modos auto/hybrid</p>
+        </div>
+        <div class="ai-card">
+          <h4>IA além de Chatbots</h4>
+          <p>Automação inteligente de atendimento, classificação de intents, CRM enrichment e analytics</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
